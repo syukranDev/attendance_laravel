@@ -1,0 +1,59 @@
+==============================================================
+Attendance Syst- built using PHP Laravel
+===============================================================
+
+CURRENT TIMESTAMP PART 1: 2:25
+
+Command used =========================
+php artisan make::controller DashboardController //to create controller baru
+
+composer require Laravel/breeze --dev //to download breeze packages
+php artisan breeze:install //install breeze packages; generate models, login/register UI
+
+
+php artisan migrate:status
+php artisan migrate:install 
+php artisan migrate:status //check dah run migration ke belum
+php artisan migrate //run migration based on folder database/migration script (dia run yang pending sahaja)
+php artisan migrate:rollback //undo balik all migration script, warning data akan hilang sebab ada drop table if exist
+
+php artisan make:migration add_column_phone_to_users_table //must add predix 'to_users_table'
+
+php artisan make:model Department -m //buat model and migration script jugak
+
+php artisan make:controller DepartmentController -r //buat Department controller with all basic path for crud (use -r)
+
+php artisan route:list //to check all the available API path
+
+@csrf //features in Laravel - to protect form submit form other server
+
+dd() //macam console.log direct kt browser
+
+<?php echo 'Hello World' ?> << ==== EQUIVALENT TO =====>> {{ 'Hello World' }}
+
+
+
+DATABASE MODEL ===================================
+Model: User
+
+- id
+- department_id
+- username
+- name
+- email
+- password
+
+Model: Department
+Table: departments
+- id
+- name
+- description
+
+Model: Attendance
+Table: attendance
+-id
+-user
+-date
+-clock_in
+-clock_out
+
